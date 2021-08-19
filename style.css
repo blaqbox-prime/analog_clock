@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    display: Flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: background-color .5s ease-in-out; */
+    opacity: 1;
+}
+
+#bg-img {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    object-position: center;
+    opacity:1;
+    mix-blend-mode: overlay;
+}
+
+.clock{
+    margin: 0 auto;
+    position: relative;
+    width:250px;
+    height:250px;
+    border: 2px solid black;
+    border-radius: 50%;
+    transition: border-color .5s ease-in-out;
+}
+
+.clock-dot{
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border-radius: 50%;
+    height:1rem;
+    width: 1rem;
+    z-index: 99;
+    transition: background-color .5s ease-in-out;
+
+}
+
+.clock-hands{
+    transition: background-color 1s ease-out;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    transform-origin: left;
+}
+
+#secondHand{
+    border-radius: 0.5px;
+    width: 110px;
+    height: 1px;
+    transform: rotate(0deg);
+}
+
+#minuteHand{
+    border-radius: 1.25px;
+    width: 90px;
+    height: 2.5px;
+    transform: rotate(0deg);
+}
+
+#hourHand{
+    border-radius: 2.5px;
+    width: 70px;
+    height: 3.5px;
+    transform: rotate(0deg);
+}
+
+#textTime{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.dark-mode-btn{
+    position:absolute;
+    top:60px;
+    outline:none;
+    padding: .8rem 1.5rem;
+    border: none;
+    background-color:rgb(31, 31, 31);
+    color: white;
+    font-weight: bold;
+    
+}
+
+/* Darkmode Style */
+
+.clock-hands.dark-mode, .clock-dot.dark-mode{
+    background-color: white;
+}
+
+.clock.dark-mode{
+    border-color: white;
+}
+
+.main.dark-mode{
+    background-color: rgb(31, 31, 31);
+}
+
+#textTime.dark-mode{
+    color: white;
+}
+
+.dark-mode-btn.dark-mode{
+    background-color:white;
+    color: black;
+}
