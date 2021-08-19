@@ -16,7 +16,6 @@ function getHours(){
    const hours = new Date().getHours();
     let rotation = `${(hours*15)-90}deg`;
     hourHand.style.transform = `rotate(${rotation})`;
-    console.log(hours);
     setTimeout(getHours, (1000*60*60));
 }
 
@@ -42,7 +41,6 @@ function setText(){
 function setBackground(){
     const bg = document.getElementById('bg-img');
     const hours = new Date().getHours();
-    console.log(hours)
     const nightImage = 'https://cdn.pixabay.com/photo/2015/07/02/10/13/sky-828648_960_720.jpg';
     const dayImage = 'https://cdn.pixabay.com/photo/2016/03/27/07/32/clouds-1282314_960_720.jpg';
     if(hours > 17){
