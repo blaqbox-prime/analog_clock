@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 
+:root{
+    font-size: 18px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -36,7 +40,7 @@
     position: relative;
     width:250px;
     height:250px;
-    border: 2px solid black;
+    border: 3px solid black;
     border-radius: 50%;
     transition: border-color .5s ease-in-out;
 }
@@ -89,7 +93,8 @@
 #textTime{
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .dark-mode-btn{
@@ -119,7 +124,7 @@
     background-color: rgb(31, 31, 31);
 }
 
-#textTime.dark-mode{
+#textTime.dark-mode, #message.dark-mode{
     color: white;
 }
 

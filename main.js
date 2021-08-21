@@ -2,8 +2,33 @@ const secondHand = document.getElementById('secondHand');
 const minuteHand = document.getElementById('minuteHand');
 const hourHand = document.getElementById('hourHand');
 const textTime = document.querySelector('#textTime');
+const message = document.getElementById('message');
 var isDarkMode = false;
 
+const eveningQuotes = [
+    'Some nights are made for torture, or reflection, or the savoring of loneliness.',
+    'Inhale and hold the evening in your lungs.',
+    'The evening star is the most beautiful of all stars.',
+    'It is the evening that questions thus from within me.'
+];
+
+const dayQuotes = [
+    "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.",
+    "Do what is right, not what is easy nor what is popular.",
+    "Pursue what catches your heart, not what catches your eyes.",
+    "Start each day with a positive thought and a grateful heart.",
+];
+
+function setMessage(){
+    let hour = new Date().getHours();
+    
+    if (hour > 5 && hour < 17){
+        message.innerHTML = dayQuotes[Math.floor(Math.random()*dayQuotes.length)];
+    } else{
+        message.innerHTML = eveningQuotes[Math.floor(Math.random()*eveningQuotes.length)];
+    }
+
+}
 
 function getSeconds(){ 
     const seconds = new Date().getSeconds();
@@ -58,10 +83,8 @@ function clock(){
     getMinutes();
     getHours();
     setText();
+    setMessage();
 }
-
-clock();
-
 
 function darkMode(){
     isDarkMode = !isDarkMode;
@@ -76,3 +99,6 @@ function darkMode(){
 function toggleDarkMode(element) {
     element.classList.toggle('dark-mode');
 }
+
+
+clock();
